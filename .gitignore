@@ -1,0 +1,20 @@
+# Configuration privée
+/config/local.php
+/config/*.tmp
+.env
+.env.*
+!.env.example
+# Contenus utilisateurs
+/uploads/**
+!/uploads/.htaccess
+!/uploads/avatars/
+!/uploads/avatars/.htaccess
+# Sauvegardes et fichiers temporaires
+*.log
+*.bak
+*.zip
+*.sql.gz
+/backups/
+/dumps/
+.DS_Store
+Thumbs.db

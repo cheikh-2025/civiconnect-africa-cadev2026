@@ -1,0 +1,404 @@
+/* Lecture et messagerie : palette CiviConnect conservée. */
+:root {
+    --muted: #4e6256;
+}
+body {
+    font-size: 16px;
+    line-height: 1.65;
+}
+.prose, .need-card > p, .project-card p, .detail-description, .bubble {
+    font-size: 16px !important;
+    line-height: 1.75;
+}
+.prose {
+    max-width: 75ch;
+    overflow-wrap: anywhere;
+}
+.muted {
+    color: var(--muted);
+    font-size: 14px !important;
+}
+.btn, .input, .nav-link, .field label {
+    font-size: 15px;
+}
+.input, input, select, textarea {
+    font-size: 16px !important;
+}
+.field label {
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+.badge, .tag, .tags span, .need-meta, .org-label {
+    font-size: 13px;
+}
+.need-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.need-card .bottom {
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.conversation-shell {
+    grid-template-rows: minmax(0, 1fr);
+    min-height: 0;
+}
+.conversation-list, .chat {
+    min-height: 0;
+    min-width: 0;
+}
+.chat {
+    overflow: hidden;
+}
+.chat-head, .chat-composer {
+    flex: 0 0 auto;
+}
+.chat-head {
+    flex-wrap: wrap;
+}
+.chat-head > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+.chat-head h3, .conversation-item strong {
+    font-size: 16px;
+}
+.chat-head p, .conversation-item p, .chat-date {
+    font-size: 14px;
+    color: var(--muted);
+}
+.chat-messages {
+    min-height: 0;
+    flex: 1 1 0;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+}
+.bubble {
+    flex: 0 0 auto;
+    overflow-wrap: anywhere;
+}
+.bubble small {
+    font-size: 12px;
+    color: var(--muted);
+}
+.chat-composer {
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+}
+.chat-composer button {
+    flex-shrink: 0;
+    min-width: 44px;
+    min-height: 44px;
+}
+@media (max-width: 760px) {
+    .conversation-shell {
+        height: var(--chat-viewport-height, calc(100dvh - 200px));
+        min-height: 220px;
+        max-height: 680px;
+    }
+    .conversation-item {
+        min-height: 76px;
+    }
+    .chat-head {
+        padding: 12px;
+        gap: 8px;
+    }
+    .chat-head .badge {
+        display: none;
+    }
+    .chat-messages {
+        padding: 14px;
+        gap: 14px;
+    }
+    .chat-composer {
+        padding: 10px;
+        padding-bottom: max(10px, env(safe-area-inset-bottom));
+        gap: 8px;
+    }
+    .chat-composer input {
+        width: 0;
+        flex: 1 1 0;
+    }
+    .bubble {
+        max-width: 92%;
+    }
+    .need-actions, .need-actions .btn {
+        width: 100%;
+    }
+}
+.nav a, .page-heading p, .notice, .field-error, .help-card p,
+.modal-subtitle, .field-hint, .validation-rules td {
+    font-size: 14px !important;
+    line-height: 1.65;
+}
+.field-hint, .modal-subtitle, .page-heading p {
+    color: var(--muted);
+}
+.topbar {
+    height: auto;
+    min-height: 79px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.breadcrumb {
+    min-width: 0;
+    color: var(--muted);
+}
+.top-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+}
+@media (max-width: 760px) {
+    .topbar {
+        min-height: 65px;
+    }
+    .breadcrumb {
+        flex: 1;
+        font-size: 14px;
+    }
+    .top-actions {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-end;
+    }
+}
+.toast {
+    font-size: 14px;
+    line-height: 1.5;
+}
+.messaging-page .toast {
+    top: 12px;
+    bottom: auto;
+    pointer-events: none;
+}
+
+/* En-tête compact : la déconnexion reste dans la navigation latérale. */
+.topbar .notification-button {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    color: var(--green, #153e32);
+    background: #eef2e9;
+    border: 1px solid #d9e2d7;
+    border-radius: 14px;
+}
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -6px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    background: #a63d24;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+}
+@media (max-width: 760px) {
+    .topbar {
+        flex-wrap: nowrap;
+        gap: 10px;
+        padding: 10px 16px;
+        min-height: 68px;
+    }
+    .topbar .breadcrumb {
+        flex: 1 1 0;
+        overflow: hidden;
+    }
+    .topbar .breadcrumb span:last-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+    .topbar .top-actions {
+        flex: 0 0 auto;
+        width: auto;
+        flex-wrap: nowrap;
+        margin-left: auto;
+    }
+    .topbar .top-actions > a[href="#profil"] {
+        display: none;
+    }
+    .topbar .mobile-menu {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Six éléments par page, avec des cartes confortables à lire. */
+.catalogue-grid,
+.catalogue-needs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+.catalogue-needs .need-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px;
+}
+.catalogue-needs .need-card h3 {
+    font-size: 20px;
+    max-width: none;
+    overflow-wrap: anywhere;
+}
+.catalogue-needs .org-label,
+.catalogue-needs .need-meta {
+    overflow-wrap: anywhere;
+}
+.catalogue-needs .need-card > p {
+    margin-bottom: 18px;
+}
+.catalogue-needs .need-card .bottom {
+    margin-top: auto;
+    align-items: stretch;
+}
+.catalogue-needs .need-actions {
+    width: 100%;
+}
+.catalogue-needs .need-actions .btn {
+    width: 100%;
+    white-space: normal;
+    min-height: 44px;
+}
+.catalogue-pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+.pagination-summary {
+    color: var(--muted);
+    font-size: 14px;
+}
+.pagination-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.catalogue-pagination button {
+    min-width: 44px;
+    width: auto;
+    min-height: 44px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+.catalogue-pagination button:disabled {
+    opacity: 0.45;
+    cursor: default;
+}
+.filters-count {
+    scroll-margin-top: 90px;
+}
+@media (max-width: 1199px) {
+    .catalogue-grid,
+    .catalogue-needs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 700px) {
+    .catalogue-grid,
+    .catalogue-needs {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Domaines multiples et dossier de vérification, adaptés au téléphone. */
+.domain-fieldset {
+    border: 1px solid #dce4dc;
+    border-radius: 14px;
+    padding: 16px;
+    min-width: 0;
+}
+.domain-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+.domain-options label, .demo-choice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.domain-options input, .demo-choice input {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    accent-color: #153e32;
+}
+.org-dossier-status, .email-confirm-panel {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f7f6ef;
+    border-radius: 16px;
+}
+.org-dossier-status p { margin: 12px 0; }
+.org-review-details > div {
+    padding: 12px 0;
+    border-bottom: 1px solid #dce4dc;
+}
+.org-review-details dt { font-weight: 700; }
+.org-review-details dd {
+    margin: 5px 0 0;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+.notification-row.is-unread { background: #f2f6f0; }
+.notification-row.is-read { background: transparent; }
+.notification-row small { display: block; margin-top: 6px; }
+@media (max-width: 400px) {
+    .domain-options { grid-template-columns: 1fr; }
+}
+
+/* Finitions du 26 octobre 2026 : accueil et accès aux besoins. */
+.landing-hero > div > p {
+    font-size: 16px;
+    line-height: 1.75;
+}
+.need-login-link {
+    white-space: normal;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+.landing-hero > div {
+    min-width: 0;
+}
+@media (max-width: 600px) {
+    .landing-hero > div > .badge {
+        max-width: 100%;
+        white-space: normal;
+    }
+    .landing-hero > div > .badge svg {
+        flex-shrink: 0;
+    }
+    .landing-hero .row.small-gap {
+        flex-wrap: wrap;
+    }
+    .landing-hero .row.small-gap > .btn {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+    }
+    .landing-hero .photo-note {
+        right: 0;
+    }
+}

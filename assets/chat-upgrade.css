@@ -1,0 +1,50 @@
+#chat-activity {
+    min-height: 24px;
+    padding: 2px 16px;
+    font-size: 13px;
+    color: #466557;
+    flex-shrink: 0;
+}
+#chat-activity.chat-send-error { color: #a13b26; }
+#chat-activity.chat-is-typing::after {
+    content: ' ● ● ●';
+    animation: chat-typing-pulse 1s ease-in-out infinite;
+}
+@keyframes chat-typing-pulse { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) {
+    #chat-activity.chat-is-typing::after { animation: none; }
+}
+.chat .bubble {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    height: auto;
+    min-height: 0;
+    flex: 0 0 auto;
+}
+
+/* Préserver uniquement les retours à la ligne du message, pas ceux du HTML. */
+.chat .bubble .message-text {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    margin: 0;
+}
+.chat .bubble small { display: block; }
+.chat-composer button { min-width: 44px; }
+
+/* Les longs aperçus restent dans leur colonne. */
+.conversation-list {
+    overflow-x: hidden;
+}
+.conversation-item > div {
+    min-width: 0;
+    flex: 1;
+}
+.conversation-item strong,
+.conversation-item p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#chat-activity {
+    overflow-wrap: anywhere;
+}

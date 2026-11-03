@@ -1,0 +1,145 @@
+/* Compléments de la version du 19 octobre : palette et composants existants conservés. */
+.public-menu-toggle,
+.public-login {
+    display: none;
+}
+
+.public-nav {
+    gap: 18px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.support-grid .input,
+.support-grid form {
+    max-width: 100%;
+}
+
+.support-post,
+.account-request {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line, #e4e8dc);
+    overflow-wrap: anywhere;
+}
+
+.support-post p {
+    white-space: pre-wrap;
+    margin-top: 8px;
+    line-height: 1.7;
+}
+
+.support-post small {
+    display: block;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.staff-reply {
+    border-left: 3px solid var(--green, #153e32);
+    padding-left: 14px;
+    background: #f6f7f1;
+}
+
+.support-list {
+    margin-top: 24px;
+}
+
+.support-list-item {
+    display: grid;
+    gap: 7px;
+    padding: 16px 0;
+    border-top: 1px solid #e4e8dc;
+    overflow-wrap: anywhere;
+}
+
+.support-list-item span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.support-thread .btn,
+.account-request .btn {
+    margin-top: 12px;
+    margin-right: 6px;
+}
+
+.tracking-url {
+    font-size: 12px;
+}
+
+@media (max-width: 1020px) {
+    .public-header {
+        position: relative;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .public-header .brand {
+        margin-right: auto;
+    }
+
+    .public-menu-toggle,
+    .public-login {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .public-login {
+        font-size: 13px;
+        color: var(--green, #153e32);
+        font-weight: 700;
+    }
+
+    .public-header .public-nav {
+        display: none;
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e4e8dc;
+        border-radius: 12px;
+        background: #fff;
+    }
+
+    .public-header .public-nav.is-open {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+    }
+
+    .public-header .public-nav a,
+    .public-header .public-nav a:nth-child(3),
+    .public-header .public-nav .btn:last-child {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 760px) {
+    .support-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .public-header {
+        padding: 16px;
+    }
+
+    .public-header .brand {
+        font-size: 14px;
+    }
+
+    .modal-foot {
+        flex-wrap: wrap;
+    }
+}

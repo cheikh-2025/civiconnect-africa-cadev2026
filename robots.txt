@@ -1,0 +1,16 @@
+# CiviConnect Africa : exploration des pages et ressources publiques.
+# Les sessions et permissions serveur protègent les espaces privés.
+# Ce fichier ne remplace pas le contrôle d’accès.
+User-agent: *
+Disallow: /config/
+Disallow: /lib/
+Disallow: /tools/
+Disallow: /sql/
+Disallow: /cgi-bin/
+Disallow: /install.php
+Disallow: /logout.php
+Disallow: /profile-photo.php
+
+# Ne pas bloquer assets/ ni api.php : nécessaires au rendu public.
+# Les fragments (#messages, #profil…) ne sont pas des chemins serveur.
+Sitemap: https://civiconnect.africa/sitemap.xml
