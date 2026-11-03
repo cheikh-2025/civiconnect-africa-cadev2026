@@ -4,8 +4,9 @@ Une plateforme d’échange africaine pour les développeurs et les organisation
 
 Projet présenté au concours CADEV 2026 par **Les Gaindés du Code** : **Cheikh Diop et Abdoul Karim Diallo**.
 
-- [Plateforme en ligne](https://civiconnect.africa/)
-- [Vidéo de présentation](https://www.youtube.com/watch?v=N3nmuBa-3rY)
+- [Plateforme en ligne]
+- [Vidéo de présentation]
+- Guide-Utilisateur-Jury
 - Les accès de démonstration du jury sont transmis séparément et ne figurent pas dans ce dossier.
 
 ## Fonctionnalités
